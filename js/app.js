@@ -1,7 +1,5 @@
 /* Princess frogger game
-*/
-
-
+ */
 // Enemies. the bugs!
 var Enemy = function(x, y, SpeedMulti) {
     //Image for the enemy
@@ -21,7 +19,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.x += this.SpeedMulti * dt * (Math.random()* 30);
+    this.x += this.SpeedMulti * dt * (Math.random() * 30);
 
     // Make enemies loop from the left to end of canvas
     if (this.x >= 700) {
@@ -38,7 +36,7 @@ Enemy.prototype.render = function() {
 
 
 /* The Player!
-*/
+ */
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -48,7 +46,7 @@ var Player = function(x, y, SpeedMulti) {
     //Player location
     this.x = x;
     this.y = y;
-    this.SpeedMulti = SpeedMulti; 
+    this.SpeedMulti = SpeedMulti;
     //Image for the player
     this.sprite = 'images/char-princess-girl.png';
 };
@@ -90,8 +88,8 @@ var displayScoreLevel = function(aScore, aLevel) {
     var firstCanvasTag = canvas[0];
 
     // add player score and level to div element created
-    scoreLevel.innerHTML = 'Current Score: ' + aScore
-        + ' / ' + 'Level: ' + aLevel;
+    scoreLevel.innerHTML = 'Current Score: ' + aScore +
+        ' / ' + 'Level: ' + aLevel;
     document.body.insertBefore(scoreLevel, firstCanvasTag[0]);
 
 
@@ -100,10 +98,10 @@ var displayScoreLevel = function(aScore, aLevel) {
 var checkCollision = function(anEnemy) {
     // check for collision between enemy and player
     if (
-        player.y + 131 >= anEnemy.y + 90
-        && player.x + 25 <= anEnemy.x + 88
-        && player.y + 73 <= anEnemy.y + 135
-        && player.x + 76 >= anEnemy.x + 11) {
+        player.y + 131 >= anEnemy.y + 90 &&
+        player.x + 25 <= anEnemy.x + 88 &&
+        player.y + 73 <= anEnemy.y + 135 &&
+        player.x + 76 >= anEnemy.x + 11) {
         player.x = 250;
         player.y = 550;
     }
@@ -111,7 +109,7 @@ var checkCollision = function(anEnemy) {
     // check for player reaching top of canvas and winning the game
     // if player wins, add 1 to the score and level
     // pass score as an argument to the difficultyRaised function
-    if (player.y + 63 <= 0) {        
+    if (player.y + 63 <= 0) {
         player.x = 250;
         player.y = 550;
 
@@ -127,7 +125,7 @@ var checkCollision = function(anEnemy) {
 
     // Check if player runs into left, bottom, or right canvas walls
     // Prevent player from moving beyond canvas wall boundaries
-    if (player.y > 550 ) {
+    if (player.y > 550) {
         player.y = 550;
     }
     if (player.x > 505.5) {
@@ -145,7 +143,7 @@ var difficultyRaised = function(numEnemies) {
     // load new set of enemies
     for (var i = 0; i <= numEnemies; i++) {
         var enemy = new Enemy(25, Math.random() * 199, Math.random() * 99);
-        
+
         //push into allEnemies array
         allEnemies.push(enemy);
     }
