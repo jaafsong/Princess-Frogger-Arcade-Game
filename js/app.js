@@ -181,7 +181,7 @@ for (var i = 0; i < 10; i++) {
 
     // Push the enemy into the array
     allEnemies.push(enemy);
-}
+};
 
 
 
