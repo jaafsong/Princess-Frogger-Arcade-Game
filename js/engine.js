@@ -1,3 +1,4 @@
+'use strict';
 /* Engine.js
  * This file provides the game loop functionality (update entities and render),
  * draws the initial game board on the screen, and then calls the update and
@@ -19,6 +20,7 @@ var Engine = (function(global) {
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
      */
+     
     var doc = global.document,
         win = global.window,
         canvas = doc.createElement('canvas'),
@@ -185,4 +187,6 @@ var Engine = (function(global) {
      * from within their app.js files.
      */
     global.ctx = ctx;
+
 })(this);
+

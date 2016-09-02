@@ -11,6 +11,10 @@ Princess-Frogger Game for Frontend Nanodegree
 
 ##Where to get the game:
 - git clone: [https://github.com/jaafsong/Princess-Frogger-Arcade-Game.git]
+- or download and unzip: [https://github.com/jaafsong/Princess-Frogger-Arcade-Game.zip]
+- Once downloaded, open index.html in your browser and from there you can play. 
+
+
 
 - Original Source game and engine from Udacity: [https://github.com/udacity/frontend-nanodegree-resume]
 
